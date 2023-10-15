@@ -59,6 +59,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+      }
+      .star {
+        position: absolute;
+        top: 10rem;
+        right: 1rem;
       }
       h1 {
         color: #fff;
@@ -92,7 +98,7 @@
         color: #000;
       }
       ::placeholder {
-        color: #555;
+        color: #444;
         opacity: 1; /* Firefox */
       }
       textarea {
@@ -260,7 +266,9 @@
           </form>
         </div>
         <div class="images">
-          <img src="img/date.png" /><img src="img/savedate.png" />
+          <img src="img/date.png" /><img class="star" src="img/star.png" /><img
+            src="img/savedate.png"
+          />
         </div>
       </div>
     </div>
