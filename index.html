@@ -2,20 +2,60 @@
   <head>
     <title>Paul en Sarah // 24-05-2024</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <style>
       body {
-        background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-        font-family: "Roboto", sans-serif;
-        font-size: 15px;
+        background: url("img/bg.png") repeat;
+        font-family: "DM Sans", sans-serif;
+        font-size: 1rem;
+        margin: 0;
       }
       .wrapper {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50rem;
+      }
+      .block {
+        width: auto;
+        text-align: center;
+        margin-left: 4rem;
+        border: 1px solid #000;
+        width: 45em;
+        background: url("img/bg2.png") no-repeat;
+        background-size: cover;
+        display: flex;
+        gap: 30px 20px;
+        padding: 1rem;
+        position: relative;
+        flex-direction: row;
+      }
+      .side {
+        position: absolute;
+        top: 2rem;
+        left: -10rem;
+        background-color: #f4f2ec;
+        border: 1px solid #000;
+        padding: 2rem;
+        width: 8rem;
+        font-size: 0.8rem;
+      }
+      .form-wrapper {
+        margin-left: 6rem;
+        width: 65%;
+      }
+      .images {
+        width: 35%;
+      }
+      .images {
+        display: flex;
+        gap: 30px 20px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -29,6 +69,7 @@
       .ff-description {
         text-align: center;
       }
+
       input,
       textarea,
       select {
@@ -36,138 +77,192 @@
         display: block;
         width: 100%;
         padding: 6px 7px;
-        margin-bottom: 8px;
-        border: 1px solid #555;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        border: 1px solid #333;
+        background: transparent;
+        &:focus {
+          outline-color: #000;
+        }
+      }
+      select {
+        color: #555;
+      }
+      option:not(:first-of-type) {
+        color: #000;
+      }
+      ::placeholder {
+        color: #555;
+        opacity: 1; /* Firefox */
+      }
+      textarea {
+        resize: none;
       }
       .btn-primary {
         width: 100%;
         border-radius: 5px;
-        padding: 5px 10px;
-        background: #fff;
+        padding: 10px 10px;
+        background: #000;
+        color: #fff;
         border: 0;
+        font-size: 1rem;
         box-shadow: none;
         cursor: pointer;
       }
       @media (max-width: 768px) {
+        body {
+          font-size: 16px;
+        }
+        .wrapper {
+          margin: 0.5rem;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+        .block {
+          flex-direction: column;
+          width: auto;
+          height: auto;
+          gap: 15px;
+          margin-left: 0;
+        }
+        .form-wrapper {
+          width: auto;
+          margin-left: 0;
+        }
+        .images {
+          width: auto;
+        }
+        .side {
+          width: auto;
+          position: static;
+          padding: 1rem;
+        }
         form,
         input,
         textarea,
         select {
           width: 100% !important;
         }
-        .wrapper {
-          padding: 0.5rem;
-        }
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <!-- <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q/viewform?embedded=true"
-        width="640"
-        height="1200"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        >Loading…</iframe
-      ><div id="form"></div>
-      <script
-        async
-        defer
-        src="https://formfacade.com/include/107746690754612893101/form/1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q/clean.js?div=form"
-      ></script> -->
-      <h2>Wij gaan trouwen!</h2>
+      <div class="block">
+        <div class="side">
+          <p><strong>Wanneer?</strong><br />24 mei 2024<br />13:30 tot laat</p>
+          <p>
+            <strong>Waar?<br /></strong>Hofstede Lust & Last<br />Middelharnis
+          </p>
+          <p>
+            <strong>Mogen kinderen mee?</strong><br />Zeker! Wat jullie zelf
+            fijn vinden.
+          </p>
+          <p>
+            <strong>Meer vragen?</strong><br />We sturen nog een update ruim van
+            te voren. Of laat het weten via: "wil je nog iets kwijt" in het
+            formulier.
+          </p>
+        </div>
+        <div class="form-wrapper">
+          <h2>Ben je erbij?</h2>
 
-      <form
-        dir="ltr"
-        id="Publish1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q"
-        class="ff-form ff-layout-default ff-public-mode ff-text-left"
-        method="POST"
-        action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q/formResponse"
-      >
-        <input
-          type="text"
-          name="entry.15707125"
-          autocomplete="name"
-          autocorrect="off"
-          spellcheck="false"
-          placeholder="Naam"
-          required
-        />
-        <input
-          type="email"
-          name="entry.1092271733"
-          placeholder="E-mailadres"
-          autocorrect="off"
-          spellcheck="false"
-          required
-        />
-        <select
-          class="ff-widget-control form-control"
-          id="Widget1660666691"
-          name="entry.1511028013"
-          required
-        >
-          <option value="">- Zijn jullie erbij? -</option>
+          <form
+            dir="ltr"
+            id="Publish1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q"
+            class="ff-form ff-layout-default ff-public-mode ff-text-left"
+            method="POST"
+            action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q/formResponse"
+          >
+            <input
+              type="text"
+              name="entry.15707125"
+              autocomplete="name"
+              autocorrect="off"
+              spellcheck="false"
+              placeholder="Naam"
+              required
+            />
+            <input
+              type="email"
+              name="entry.1092271733"
+              placeholder="E-mailadres"
+              autocorrect="off"
+              spellcheck="false"
+              required
+            />
+            <select
+              class="ff-widget-control form-control"
+              id="Widget1660666691"
+              name="entry.1511028013"
+              required
+            >
+              <option value="" selected>- Zijn jullie erbij? -</option>
 
-          <option value="Ja">Ja</option>
+              <option value="Ja">Ja</option>
 
-          <option value="Nee">Nee</option>
-        </select>
-        <select
-          class="ff-widget-control form-control"
-          id="Widget1274219484"
-          name="entry.478720308"
-          required
-        >
-          <option value="">- Met hoeveel volwassenen komen jullie? -</option>
+              <option value="Nee">Nee</option>
+            </select>
+            <select
+              class="ff-widget-control form-control"
+              id="Widget1274219484"
+              name="entry.478720308"
+              required
+            >
+              <option value="" selected>
+                - Met hoeveel volwassenen komen jullie? -
+              </option>
 
-          <option value="1">1</option>
+              <option value="1">1</option>
 
-          <option value="2">2</option>
+              <option value="2">2</option>
 
-          <option value="3">3</option>
+              <option value="3">3</option>
 
-          <option value="4">4</option>
-        </select>
+              <option value="4">4</option>
+            </select>
 
-        <select
-          class="ff-widget-control form-control"
-          id="Widget1031972383"
-          name="entry.1003756659"
-          required
-        >
-          <option value="">- Met hoeveel kinderen komen jullie? -</option>
+            <select
+              class="ff-widget-control form-control"
+              id="Widget1031972383"
+              name="entry.1003756659"
+              required
+            >
+              <option value="">- Met hoeveel kinderen komen jullie? -</option>
 
-          <option value="0">0</option>
+              <option value="0">0</option>
 
-          <option value="1">1</option>
+              <option value="1">1</option>
 
-          <option value="2">2</option>
+              <option value="2">2</option>
 
-          <option value="3">3</option>
+              <option value="3">3</option>
 
-          <option value="4">4</option>
-        </select>
-        <textarea
-          rows="3"
-          name="entry.1967256637"
-          placeholder="Dieetwensen?"
-        ></textarea>
-        <textarea
-          rows="3"
-          name="entry.276787016"
-          placeholder="Wil je nog iets anders kwijt?"
-        ></textarea>
-        <button
-          type="submit"
-          class="btn btn-lg btn-primary"
-          id="ff-submit-root"
-        >
-          <span> Verzenden </span>
-        </button>
-      </form>
+              <option value="4">4</option>
+            </select>
+            <textarea
+              rows="3"
+              name="entry.1967256637"
+              placeholder="Dieetwensen?"
+            ></textarea>
+            <textarea
+              rows="3"
+              name="entry.276787016"
+              placeholder="Wil je nog iets anders kwijt?"
+            ></textarea>
+            <button
+              type="submit"
+              class="btn btn-lg btn-primary"
+              id="ff-submit-root"
+            >
+              <span> Verzenden </span>
+            </button>
+          </form>
+        </div>
+        <div class="images">
+          <img src="img/date.png" /><img src="img/savedate.png" />
+        </div>
+      </div>
     </div>
   </body>
 </html>
