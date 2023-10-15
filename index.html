@@ -1,6 +1,7 @@
 <html>
   <head>
-    <title>Paul en Sarah</title>
+    <title>Paul en Sarah // 24-05-2024</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,9 +48,15 @@
         box-shadow: none;
         cursor: pointer;
       }
-      @media only screen and (max-width: 768px) {
-        #form {
-          width: 100vw !important;
+      @media (max-width: 768px) {
+        form,
+        input,
+        textarea,
+        select {
+          width: 100% !important;
+        }
+        .wrapper {
+          padding: 0.5rem;
         }
       }
     </style>
@@ -89,7 +96,7 @@
           required
         />
         <input
-          type="text"
+          type="email"
           name="entry.1092271733"
           placeholder="E-mailadres"
           autocorrect="off"
@@ -158,7 +165,7 @@
           class="btn btn-lg btn-primary"
           id="ff-submit-root"
         >
-          <span> Submit </span>
+          <span> Verzenden </span>
         </button>
       </form>
     </div>
