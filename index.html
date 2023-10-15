@@ -29,14 +29,20 @@
         text-align: center;
       }
       input,
+      textarea,
       select {
+        font-family: "Roboto", sans-serif;
         display: block;
         width: 100%;
-        padding: 4px 7px;
+        padding: 6px 7px;
+        margin-bottom: 8px;
+        border: 1px solid #555;
       }
       .btn-primary {
         width: 100%;
         border-radius: 5px;
+        padding: 5px 10px;
+        background: #fff;
         border: 0;
         box-shadow: none;
         cursor: pointer;
@@ -50,7 +56,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <iframe
+      <!-- <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q/viewform?embedded=true"
         width="640"
         height="1200"
@@ -58,14 +64,13 @@
         marginheight="0"
         marginwidth="0"
         >Loading…</iframe
-      >
-      <!-- <div id="form"></div>
+      ><div id="form"></div>
       <script
         async
         defer
         src="https://formfacade.com/include/107746690754612893101/form/1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q/clean.js?div=form"
       ></script> -->
-      <!-- <h2>Wij gaan trouwen!</h2>
+      <h2>Wij gaan trouwen!</h2>
 
       <form
         dir="ltr"
@@ -76,21 +81,26 @@
       >
         <input
           type="text"
-          class="ff-widget-control form-control"
-          id="Widget242823539"
           name="entry.15707125"
           autocomplete="name"
           autocorrect="off"
           spellcheck="false"
-          value=""
           placeholder="Naam"
-          required=""
+          required
+        />
+        <input
+          type="text"
+          name="entry.1092271733"
+          placeholder="E-mailadres"
+          autocorrect="off"
+          spellcheck="false"
+          required
         />
         <select
           class="ff-widget-control form-control"
           id="Widget1660666691"
           name="entry.1511028013"
-          required=""
+          required
         >
           <option value="">- Zijn jullie erbij? -</option>
 
@@ -102,7 +112,7 @@
           class="ff-widget-control form-control"
           id="Widget1274219484"
           name="entry.478720308"
-          required=""
+          required
         >
           <option value="">- Met hoeveel volwassenen komen jullie? -</option>
 
@@ -115,14 +125,42 @@
           <option value="4">4</option>
         </select>
 
+        <select
+          class="ff-widget-control form-control"
+          id="Widget1031972383"
+          name="entry.1003756659"
+          required
+        >
+          <option value="">- Met hoeveel kinderen komen jullie? -</option>
+
+          <option value="0">0</option>
+
+          <option value="1">1</option>
+
+          <option value="2">2</option>
+
+          <option value="3">3</option>
+
+          <option value="4">4</option>
+        </select>
+        <textarea
+          rows="3"
+          name="entry.1967256637"
+          placeholder="Dieetwensen?"
+        ></textarea>
+        <textarea
+          rows="3"
+          name="entry.276787016"
+          placeholder="Wil je nog iets anders kwijt?"
+        ></textarea>
         <button
           type="submit"
-          class="btn btn-lg btn-primary ff-submit"
+          class="btn btn-lg btn-primary"
           id="ff-submit-root"
         >
           <span> Submit </span>
         </button>
-      </form> -->
+      </form>
     </div>
   </body>
 </html>
