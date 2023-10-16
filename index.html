@@ -73,7 +73,9 @@
       .ff-description {
         text-align: center;
       }
-
+      [data-attending-fields] {
+        display: block;
+      }
       input,
       textarea,
       select {
@@ -89,11 +91,12 @@
           outline-color: #000;
         }
       }
-      select {
-        color: #555;
+      select option::placeholder {
+        color: gray; /* Change the color of the placeholder text */
       }
-      option:not(:first-of-type) {
-        color: #000;
+
+      select option {
+        color: red; /* Change the color of the selected option */
       }
       ::placeholder {
         color: #444;
@@ -183,7 +186,7 @@
               name="entry.15707125"
               autocorrect="off"
               spellcheck="false"
-              placeholder="Naam"
+              placeholder="Je naam"
               required
             />
             <input
@@ -198,65 +201,70 @@
               class="ff-widget-control form-control"
               id="Widget1660666691"
               name="entry.1511028013"
+              data-attending-field
               required
             >
-              <option value="" selected>- Zijn jullie erbij? -</option>
+              <option disabled selected>Zijn jullie erbij?</option>
 
               <option value="Ja">Ja</option>
 
               <option value="Nee">Nee</option>
             </select>
-            <select
-              class="ff-widget-control form-control"
-              id="Widget1274219484"
-              name="entry.478720308"
-              required
-            >
-              <option value="" selected>
-                - Met hoeveel volwassenen komen jullie? -
-              </option>
+            <div data-attending-fields>
+              <select
+                class="ff-widget-control form-control"
+                id="Widget1274219484"
+                name="entry.478720308"
+                data-adults-field
+                required
+              >
+                <option disabled hidden selected>
+                  Met hoeveel volwassenen komen jullie?
+                </option>
 
-              <option value="1">1</option>
+                <option value="1">1</option>
 
-              <option value="2">2</option>
+                <option value="2">2</option>
 
-              <option value="3">3</option>
+                <option value="3">3</option>
 
-              <option value="4">4</option>
-            </select>
+                <option value="4">4</option>
+              </select>
 
-            <select
-              class="ff-widget-control form-control"
-              id="Widget1031972383"
-              name="entry.1003756659"
-              required
-            >
-              <option value="">- Met hoeveel kinderen komen jullie? -</option>
+              <select
+                class="ff-widget-control form-control"
+                id="Widget1031972383"
+                name="entry.1003756659"
+                data-kids-field
+                required
+              >
+                <option value="">Met hoeveel kinderen komen jullie?</option>
 
-              <option value="0">0</option>
+                <option value="0">0</option>
 
-              <option value="1">1</option>
+                <option value="1">1</option>
 
-              <option value="2">2</option>
+                <option value="2">2</option>
 
-              <option value="3">3</option>
+                <option value="3">3</option>
 
-              <option value="4">4</option>
-            </select>
-            <textarea
-              rows="3"
-              name="entry.1967256637"
-              placeholder="Dieetwensen?"
-            ></textarea>
-            <textarea
-              rows="3"
-              name="entry.276787016"
-              placeholder="Wil je nog iets anders kwijt?"
-            ></textarea>
+                <option value="4">4</option>
+              </select>
+              <textarea
+                rows="3"
+                name="entry.1967256637"
+                placeholder="Dieetwensen?"
+              ></textarea>
+              <textarea
+                rows="3"
+                name="entry.276787016"
+                placeholder="Wil je nog iets anders kwijt?"
+              ></textarea>
+            </div>
             <button
               type="submit"
               class="btn btn-lg btn-primary"
-              id="ff-submit-root"
+              data-submit-btn
             >
               <span> Verzenden </span>
             </button>
@@ -270,4 +278,31 @@
       </div>
     </div>
   </body>
+  <script>
+    // Get references to the "Zijn jullie erbij?" select and the other selects
+    const attendingSelect = document.querySelector("[data-attending-field]");
+    console.log(
+      "🚀 ~ file: index.html:155 ~ attendingSelect:",
+      attendingSelect
+    );
+    const adultsSelect = document.querySelector("[data-adults-field]");
+    const kidsSelect = document.querySelector("[data-kids-field]");
+    const attendingFields = document.querySelector("[data-attending-fields]");
+
+    attendingSelect?.addEventListener("change", function () {
+      if (attendingSelect.value === "Nee") {
+        // If "Nee" is selected, hide and remove the other selects
+        attendingFields.style.display = "none";
+        attendingFields.style.opacity = 0;
+        adultsSelect.removeAttribute("required");
+        kidsSelect.removeAttribute("required");
+      } else {
+        // If "Ja" is selected, show and make the other selects required
+        attendingFields.style.display = "block";
+        attendingFields.style.opacity = 1;
+        adultsSelect.setAttribute("required", "required");
+        kidsSelect.setAttribute("required", "required");
+      }
+    });
+  </script>
 </html>
