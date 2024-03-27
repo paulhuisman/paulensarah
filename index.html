@@ -11,298 +11,189 @@
     />
     <style>
       body {
-        background: url("img/bg.png") repeat;
+        background-color: #bca179;
         font-family: "DM Sans", sans-serif;
-        font-size: 1rem;
-        margin: 0;
+        font-size: 1.125rem;
+        margin: 40px 0;
+        color: #000;
       }
       .wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        max-width: 1200px;
+        padding: 0 20px;
+        margin: 0 auto;
       }
-      .block {
-        width: auto;
-        text-align: center;
-        margin-left: 4rem;
-        border: 1px solid #000;
-        width: 45em;
-        background: #d0caba url("img/bg2.png") no-repeat;
-        background-size: cover;
-        display: flex;
-        gap: 30px 20px;
-        padding: 1rem;
-        position: relative;
-        flex-direction: row;
+      h1 {
+        color: #274589;
+        font-size: 13rem;
+        margin: 0;
+        line-height: 13rem;
+        font-weight: 500;
       }
-      .side {
-        position: absolute;
-        top: 2rem;
-        left: -10.5rem;
-        background-color: #f4f2ec;
-        border: 1px solid #000;
-        padding: 2rem;
-        width: 8.5rem;
-        font-size: 0.8rem;
+      h2 {
+        color: #166632;
+        font-size: 1.7rem;
+        margin: 0;
+        font-weight: 500;
       }
-      .form-wrapper {
-        margin-left: 5rem;
-        width: 65%;
-        padding-bottom: 1rem;
+      h2.blue {
+        color: #274589;
       }
-      .images {
-        width: 35%;
+      h2.light-blue {
+        color: #80a0e8;
       }
-      .images {
-        display: flex;
-        gap: 30px 20px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+      h2.green {
+        color: #166632;
       }
-      .star {
-        position: absolute;
-        top: 10rem;
-        right: 1rem;
+      h2.red {
+        color: #8f3918;
       }
-      .ff-powered-img {
-        visibility: hidden !important;
+      h2.beige {
+        color: #bca179;
       }
-      .ff-description {
-        text-align: center;
+      p.large {
+        font-size: 1.5rem;
       }
-      [data-attending-fields] {
-        display: block;
-      }
-      input,
-      textarea,
-      select {
-        font-family: "Roboto", sans-serif;
-        display: block;
-        width: 100%;
-        padding: 6px 7px;
-        margin-bottom: 1rem;
-        font-size: 1rem;
-        border: 1px solid #333;
-        background: transparent;
-        &:focus {
-          outline-color: #000;
-        }
-      }
-      select option::placeholder {
-        color: gray; /* Change the color of the placeholder text */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 450px);
       }
 
-      select option {
-        color: red; /* Change the color of the selected option */
+      .grid-item {
+        background-color: #80a0e8;
+        padding: 30px;
+        text-align: left;
       }
-      ::placeholder {
-        color: #444;
-        opacity: 1; /* Firefox */
+      .grid-item-1 {
+        background:  #80a0e8 url("img/grid1.png")  no-repeat;
+        background-position: bottom 20px center;
       }
-      textarea {
-        resize: none;
+      .grid-item-2 {
+        background: url("img/grid2.jpg") no-repeat;
+        background-size: cover;
       }
-      .btn-primary {
-        width: 100%;
-        border-radius: 5px;
-        padding: 10px 10px;
-        background: #000;
-        color: #fff;
+      .grid-item-3 {
+        background:  #838f71 url("img/grid3.png")  no-repeat;
+        background-position: bottom 35px right 20px;
+      }
+      .grid-item-3 p {
+        max-width: 55%;
+      }
+      .grid-item-4 {
+        background: url("img/grid4.jpg") no-repeat;
+        background-size: cover;
+      }
+      .grid-item-5 table,
+      .grid-item-5 tr,
+      .grid-item-5 td {
+        font-size: 1.125rem;
         border: 0;
-        font-size: 1rem;
-        box-shadow: none;
-        cursor: pointer;
+        border-collapse:collapse;
+      }
+      .grid-item-5 td {
+        padding-right: 10px;
+        padding-bottom: 8px;
+      }
+      .grid-item-6 {
+        background: url("img/grid6.jpg") no-repeat;
+        background-size: cover;
+      }
+      .grid-item-7 {
+        background: url("img/grid7.jpg") no-repeat;
+        background-size: cover;
+      }
+      .grid-item-8 {
+        background:  #c96e89 url("img/grid8.png")  no-repeat;
+        background-position: bottom 25px right 20px;
+      }
+      .grid-item-9 {
+        background:  #90744b url("img/grid9.png")  no-repeat;
+        background-position: bottom 40px right 30px;
+      }
+      .grid-item-9 a {
+        color: #000;
+        text-decoration: underline;
       }
       @media (max-width: 768px) {
+        /* mobile */
         body {
-          font-size: 16px;
+          margin: 20px 0;
+        }
+        h1 {
+          font-size: 4.2rem;
+          line-height: 5rem;
+        }
+        h2 {
+          font-size: 1.1rem;
         }
         .wrapper {
-          margin: 0.5rem;
-          flex-direction: column;
-          justify-content: flex-start;
         }
-        .block {
-          flex-direction: column;
-          width: auto;
-          height: auto;
-          gap: 15px;
-          margin-left: 0;
+        .grid-container {
+          display: block;
         }
-        .form-wrapper {
-          width: auto;
-          margin-left: 0;
-        }
-        .images {
-          width: auto;
-        }
-        .side {
-          width: auto;
-          position: static;
-          padding: 1rem;
-        }
-        form,
-        input,
-        textarea,
-        select {
-          width: 100% !important;
+        .grid-item {
+          height: 350px;
         }
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <div class="block">
-        <div class="side">
-          <p><strong>Wanneer?</strong><br />24 mei 2024<br />13:30 tot laat</p>
-          <p>
-            <strong>Waar?<br /></strong>Hofstede Lust & Last<br />Sommelsdijk
-          </p>
-          <p>
-            <strong>Mogen kinderen mee?</strong><br />Zeker! Wat jullie zelf
-            fijn vinden.
-          </p>
-          <p>
-            <strong>Meer vragen?</strong><br />We sturen nog een update ruim van
-            te voren. Of laat het weten via: "wil je nog iets kwijt" in het
-            formulier.
+      <h1>Paul & Sarah</h1>
+      <h2>24 mei 2024 | Hofstede Lust & Last | 14:00</h2>
+      <br /><br />
+
+      <div class="grid-container">
+        <div class="grid-item grid-item-1">
+          <h2 class="blue">Waar moet ik naar toe?</h2>
+          <p class="large">
+            Hofstede Lust & Last<br />
+            Kokseweg 4-6<br />
+            Sommelsdijk<br /><br />
+            (Goeree-Overflakkee)
           </p>
         </div>
-        <div class="form-wrapper">
-          <h1>Ben je erbij?</h1>
-
-          <form
-            dir="ltr"
-            id="Publish1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q"
-            class="ff-form ff-layout-default ff-public-mode ff-text-left"
-            method="POST"
-            action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSf6U_7tHt1yoH7FW0-ApKlk68AcS1K8f4v3u6RuARPr-9h_7Q/formResponse"
-          >
-            <input
-              type="text"
-              name="entry.15707125"
-              autocorrect="off"
-              spellcheck="false"
-              placeholder="Je naam"
-              required
-            />
-            <input
-              type="email"
-              name="entry.1092271733"
-              placeholder="E-mailadres"
-              autocorrect="off"
-              spellcheck="false"
-              required
-            />
-            <select
-              class="ff-widget-control form-control"
-              id="Widget1660666691"
-              name="entry.1511028013"
-              data-attending-field
-              required
-            >
-              <option disabled selected>Zijn jullie erbij?</option>
-
-              <option value="Ja">Ja</option>
-
-              <option value="Nee">Nee</option>
-            </select>
-            <div data-attending-fields>
-              <select
-                class="ff-widget-control form-control"
-                id="Widget1274219484"
-                name="entry.478720308"
-                data-adults-field
-                required
-              >
-                <option disabled hidden selected>
-                  Met hoeveel volwassenen komen jullie?
-                </option>
-
-                <option value="1">1</option>
-
-                <option value="2">2</option>
-
-                <option value="3">3</option>
-
-                <option value="4">4</option>
-              </select>
-
-              <select
-                class="ff-widget-control form-control"
-                id="Widget1031972383"
-                name="entry.1003756659"
-                data-kids-field
-                required
-              >
-                <option value="">Met hoeveel kinderen komen jullie?</option>
-
-                <option value="0">0</option>
-
-                <option value="1">1</option>
-
-                <option value="2">2</option>
-
-                <option value="3">3</option>
-
-                <option value="4">4</option>
-              </select>
-              <textarea
-                rows="3"
-                name="entry.1967256637"
-                placeholder="Dieetwensen?"
-              ></textarea>
-              <textarea
-                rows="3"
-                name="entry.276787016"
-                placeholder="Wil je nog iets anders kwijt?"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              class="btn btn-lg btn-primary"
-              data-submit-btn
-            >
-              <span> Verzenden </span>
-            </button>
-          </form>
+        <div class="grid-item grid-item-2"></div>
+        <div class="grid-item grid-item-3">
+          <h2>Cadeautip?</h2>
+          <p>
+            Envelopje! Geen specifieke wensen en dus sparen we voor een reis met
+            zijn vieren.
+          </p>
         </div>
-        <div class="images">
-          <img src="img/date.png" /><img class="star" src="img/star.png" /><img
-            src="img/savedate.png"
-          />
+        <div class="grid-item grid-item-4"></div>
+        <div class="grid-item grid-item-5">
+          <h2>Wat gaan we doen?</h2>
+          <p>
+            In hele grote lijnen staat er op het programma:<br /><br />
+
+            <table>
+              <tr><td>13:30-14:00</td><td>aankomst</td></tr>
+              <tr><td>14:30-15:15</td><td>ceremonie</td></tr>
+              <tr><td>18:00-20:00</td><td>dinner</td></tr>
+              <tr><td>20:00-02:00</td><td>dansen</td></tr>
+            </table>
+          </p>
+        </div>
+        <div class="grid-item grid-item-6">6</div>
+        <div class="grid-item grid-item-7">7</div>
+        <div class="grid-item grid-item-8">
+          <h2 class="red">Wat moet ik aan?</h2>
+          <p>
+            Casual chic. <br /><br />P.S. mooi aankleden is natuurlijk altijd leuk! Praktische overweging: hou rekening met de weersomstandigheden en dat het (hopelijk) bijna geheel buiten is op een grasveld tussen de bomen. Naaldhakken daarom niet handig, maar laagjes kleding voor latere uurtjes dan weer wel. 
+
+          </p>
+        </div>
+        <div class="grid-item grid-item-9">
+          <h2 class="beige">Vragen / iets doorgeven?</h2>
+          <p>
+            Zet het op de mail of app!<br /><br />
+            <a href="mailto:paulhuisman88@gmail.com">paulhuisman88@gmail.com</a
+            ><br />
+            <a href="mailto:sarah@vanhecken.com">sarah@vanhecken.com</a>
+          </p>
         </div>
       </div>
     </div>
   </body>
-  <script>
-    // Get references to the "Zijn jullie erbij?" select and the other selects
-    const attendingSelect = document.querySelector("[data-attending-field]");
-    console.log(
-      "🚀 ~ file: index.html:155 ~ attendingSelect:",
-      attendingSelect
-    );
-    const adultsSelect = document.querySelector("[data-adults-field]");
-    const kidsSelect = document.querySelector("[data-kids-field]");
-    const attendingFields = document.querySelector("[data-attending-fields]");
-
-    attendingSelect?.addEventListener("change", function () {
-      if (attendingSelect.value === "Nee") {
-        // If "Nee" is selected, hide and remove the other selects
-        attendingFields.style.display = "none";
-        attendingFields.style.opacity = 0;
-        adultsSelect.removeAttribute("required");
-        kidsSelect.removeAttribute("required");
-      } else {
-        // If "Ja" is selected, show and make the other selects required
-        attendingFields.style.display = "block";
-        attendingFields.style.opacity = 1;
-        adultsSelect.setAttribute("required", "required");
-        kidsSelect.setAttribute("required", "required");
-      }
-    });
-  </script>
 </html>
